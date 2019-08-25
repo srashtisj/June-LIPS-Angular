@@ -9,6 +9,7 @@ import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductGroupComponent } from './product-group/product-group.component';
 import { ProductFormArrayComponent } from './product-form-array/product-form-array.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductFormArrayComponent
   ],
   imports: [
-    CommonModule,
-    ProductRoutingModule,
-    ReactiveFormsModule
+    SharedModule,
+    ProductRoutingModule
   ]
 })
 export class ProductModule { }

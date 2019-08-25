@@ -7,6 +7,7 @@ import { PostsRoutingModule } from './posts-routing.module';
 import { PostsComponent } from './posts.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { PostsAddComponent } from './posts-add/posts-add.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,9 +16,7 @@ import { PostsAddComponent } from './posts-add/posts-add.component';
     PostsAddComponent
   ],
   imports: [
-    CommonModule,
-    HttpClientModule,
-    FormsModule,
+    SharedModule,
     PostsRoutingModule
   ],
   exports: [PostsComponent]
