@@ -3,7 +3,7 @@ import {
   ContentChild,
   AfterContentInit
 } from '@angular/core';
-import { ProductComponent } from '../product/product.component';
+// import { ProductComponent } from '../product/product.component';
 
 @Component({
   selector: 'app-container',
@@ -12,8 +12,8 @@ import { ProductComponent } from '../product/product.component';
 })
 export class ContainerComponent implements OnInit, AfterContentInit {
 
-  @ContentChild(ProductComponent, { static: false })
-  productComponent: ProductComponent;
+  // @ContentChild(ProductComponent, { static: false })
+  // productComponent: ProductComponent;
 
   constructor() { }
 
@@ -21,6 +21,6 @@ export class ContainerComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    this.productComponent.productName = 'From Content Projection';
+    // this.productComponent.productName = 'From Content Projection';
   }
 }

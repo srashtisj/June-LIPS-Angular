@@ -7,11 +7,11 @@ import { ProductGroupComponent } from './product-group/product-group.component';
 import { ProductFormArrayComponent } from './product-form-array/product-form-array.component';
 
 const routes: Routes = [
-  { path: 'product', component: ProductComponent },
-  { path: 'product/add', component: ProductAddComponent },
-  { path: 'product/add/form', component: ProductFormComponent },
-  { path: 'product/add/group', component: ProductGroupComponent },
-  { path: 'product/add/array', component: ProductFormArrayComponent }
+  { path: '', component: ProductComponent },
+  { path: 'add', component: ProductAddComponent },
+  { path: 'add/form', component: ProductFormComponent },
+  { path: 'add/group', component: ProductGroupComponent },
+  { path: 'add/array', component: ProductFormArrayComponent }
 ];
 
 @NgModule({

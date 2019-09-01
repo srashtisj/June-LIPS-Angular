@@ -20,6 +20,5 @@ export const APP_MODULES = [
   MatSidenavModule,
   MatIconModule,
   MatListModule,
-  ProductModule,
   AppRoutingModule
 ];
