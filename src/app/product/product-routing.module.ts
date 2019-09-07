@@ -7,10 +7,14 @@ import { ProductGroupComponent } from './product-group/product-group.component';
 import { ProductFormArrayComponent } from './product-form-array/product-form-array.component';
 
 const routes: Routes = [
-  { path: '', component: ProductComponent },
+  {
+    path: '', component: ProductComponent,
+    children: [
+      { path: 'add/group', component: ProductGroupComponent },
+      { path: 'add/form', component: ProductFormComponent }
+    ],
+  },
   { path: 'add', component: ProductAddComponent },
-  { path: 'add/form', component: ProductFormComponent },
-  { path: 'add/group', component: ProductGroupComponent },
   { path: 'add/array', component: ProductFormArrayComponent }
 ];
 
