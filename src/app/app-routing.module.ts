@@ -3,12 +3,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { EmployeeComponent } from './employee/employee.component';
 import { PhotosComponent } from './photos/photos.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'employee', component: EmployeeComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'employee', component: EmployeeComponent,
+    data: {
+      title: 'Employe Header',
+      name: 'Employee1'
+    }
+  },
   { path: 'photos', component: PhotosComponent },
   {
-    path: '', redirectTo: 'employee',
+    path: '', redirectTo: 'login',
     pathMatch: 'full'
   },
   {

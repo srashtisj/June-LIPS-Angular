@@ -5,6 +5,7 @@ import {
 import { IEmployee } from './iemployee';
 import { EmployeeService } from './service/employee.service';
 import { NewEmployeeService } from './service/new-employee.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-employee',
@@ -24,7 +25,8 @@ export class EmployeeComponent implements OnInit {
 
   // empService = new EmployeeService();
 
-  constructor(@Self() private empService: EmployeeService) { }
+  constructor(@Self() private empService: EmployeeService,
+    private router: ActivatedRoute) { }
 
   ngOnInit() {
     // if(this.empService) {
@@ -33,6 +35,7 @@ export class EmployeeComponent implements OnInit {
     // }
     // console.log(this.searchBox);
     // this.searchBox.nativeElement.onchange((data) => console.log(data));
+    this.router.data.subscribe((data) => console.log(data));
     this.empList = this.empService.getEmployeeList();
   }
 

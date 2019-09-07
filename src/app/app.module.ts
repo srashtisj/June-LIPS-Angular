@@ -15,6 +15,7 @@ import { CONFIG_SERVICE, CONFIG_VALUE } from './valueProvider/valueprovider.serv
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { APP_MODULES } from './module.config';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { APP_MODULES } from './module.config';
     ContainerComponent,
     MainNavComponent,
     PhotosComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent
   ],
   imports: [
     ...APP_MODULES
