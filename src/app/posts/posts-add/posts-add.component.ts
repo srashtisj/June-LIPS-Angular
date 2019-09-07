@@ -5,6 +5,7 @@ import {
 import { IPosts } from '../iposts';
 // import { PostsService } from '../service/posts.service';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -19,9 +20,11 @@ export class PostsAddComponent implements OnInit {
   @Output() addPost = new EventEmitter<IPosts>();
   @Output() editPost = new EventEmitter<IPosts>();
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe((data) =>
+      console.log(data.get('id'), data.get('userid')))
   }
 
   submitPost(postForm: NgForm) {
