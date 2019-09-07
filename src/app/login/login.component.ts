@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
       this.loginForm.get('password').value === 'admin') {
       //redirect code
       this.router.navigate(['/employee']);
+      // this.router.navigate([{ outlets: { about: null } }]);
     }
   }
 

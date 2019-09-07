@@ -4,8 +4,13 @@ import { EmployeeComponent } from './employee/employee.component';
 import { PhotosComponent } from './photos/photos.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 const routes: Routes = [
+  {
+    path: 'aboutus', component: AboutusComponent,
+    outlet: 'about'
+  },
   { path: 'login', component: LoginComponent },
   {
     path: 'employee', component: EmployeeComponent,
@@ -32,7 +37,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

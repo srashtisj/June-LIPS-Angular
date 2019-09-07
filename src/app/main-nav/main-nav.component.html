@@ -11,6 +11,8 @@
       <a mat-list-item routerLink="product/add/array">Add Product Array</a>
       <a mat-list-item routerLink="posts">Posts</a>
       <a mat-list-item routerLink="photos">Photos</a>
+      <a mat-list-item
+       [routerLink]="[{ outlets: { about: ['aboutus'] } }]">AboutUs</a>
 
     </mat-nav-list>
   </mat-sidenav>
@@ -24,5 +26,6 @@
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
+    <router-outlet name="about"></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
