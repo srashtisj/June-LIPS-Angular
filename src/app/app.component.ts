@@ -1,4 +1,5 @@
 import { Component, DoCheck, OnInit, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { EmployeeService } from './employee/service/employee.service';
 import { IEmployee } from './employee/iemployee';
 import { IConfig } from './valueProvider/ivalueprovider';
@@ -16,12 +17,15 @@ export class AppComponent implements OnInit, DoCheck {
   productCount = 0;
   empList: IEmployee[] = [];
   constructor(private empService: EmployeeService,
+    private router: Router,
     @Inject(CONFIG_SERVICE) private config: IConfig) {
-      console.log(config.apiEndPoint, config.pageSize);
-     }
+    console.log(config.apiEndPoint, config.pageSize);
+  }
 
 
   ngOnInit() {
+
+    this.router.events.subscribe((events) => console.log(events))
     // this.productService.getProduct().
     //   subscribe(
     //     (data) => this.productCount = data.length

@@ -5,6 +5,7 @@ import { PhotosComponent } from './photos/photos.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'employee', component: EmployeeComponent,
+    canActivate: [AuthGuard],
     data: {
       title: 'Employe Header',
       name: 'Employee1'
@@ -26,6 +28,8 @@ const routes: Routes = [
   },
   {
     path: 'product',
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
     // before Angular 8
     // loadChildren  : './product/product.module#ProductModule',
     loadChildren: () =>
@@ -37,7 +41,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, { useHash: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
