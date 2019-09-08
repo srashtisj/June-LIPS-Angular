@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   constructor(private fb: FormBuilder,
+    private loginService: LoginService,
     private router: Router) { }
 
 
@@ -21,12 +23,16 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (this.loginForm.get('userName').value === 'admin' &&
-      this.loginForm.get('password').value === 'admin') {
-      //redirect code
-      this.router.navigate(['/employee']);
-      // this.router.navigate([{ outlets: { about: null } }]);
-    }
+    this.loginService.login(
+      this.loginForm.get('userName').value,
+      this.loginForm.get('password').value).subscribe(loginSuceess => {
+        if (loginSuceess) {
+          this.router.navigate(['/employee']);
+        }
+      })
+    //redirect code
+
+    // this.router.navigate([{ outlets: { about: null } }]);
   }
 
 }
